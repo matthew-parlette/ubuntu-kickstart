@@ -21,7 +21,9 @@ util="keepassx mirage"
 # Install software
 ##################
 if $install_software ; then
-  sudo apt-get install -y "$dev $ide $util"
+  echo "Installing software..."
+  "sudo apt-get install -y $dev $ide $util"
+  echo "...ok"
 fi
 
 # Install and configure fonts
@@ -38,9 +40,11 @@ fi
 # Setup bash prompt
 ###################
 if $install_bashprompt ; then
+  echo "Setting up bash prompt..."
   cp bashprompt ~/.bashprompt
   #use printf: from http://stackoverflow.com/questions/8467424/echo-new-line-in-bash-prints-literal-n
-  printf "\n#Setup bash prompt\nsource ~.bashprompt" > ~/.bashrc
+  printf "\n#Setup bash prompt\nsource ~.bashprompt" >> ~/.bashrc
+  echo "...ok"
 fi
 
 # User post-install actions
