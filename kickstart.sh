@@ -43,7 +43,7 @@ if $install_bashprompt ; then
   echo "Setting up bash prompt..."
   cp bashprompt ~/.bashprompt
   #use printf: from http://stackoverflow.com/questions/8467424/echo-new-line-in-bash-prints-literal-n
-  printf "\n#Setup bash prompt\nsource ~.bashprompt" >> ~/.bashrc
+  printf "\n#Setup bash prompt\nsource ~/cat .bashprompt\nnano " >> ~/.bashrc
   echo "...ok"
 fi
 
