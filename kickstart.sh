@@ -5,16 +5,24 @@
 # Configuration #
 #################
 
+install_software=true
 install_fonts=true
+install_bashprompt=true
 
 # Development Libraries
-dev="build-essential"
+dev="build-essential git ruby"
 
 # IDE
 ide="geany"
 
 # Utilities
-util="keepassx"
+util="keepassx mirage"
+
+# Install software
+##################
+if $install_software ; then
+  sudo apt-get install -y "$dev $ide $util"
+fi
 
 # Install and configure fonts
 #############################
@@ -25,6 +33,14 @@ if $install_fonts ; then
   ##  so we can just do a straight copy
   cp fonts.conf ~/.fonts.conf
   echo "...ok"
+fi
+
+# Setup bash prompt
+###################
+if $install_bashprompt ; then
+  cp bashprompt ~/.bashprompt
+  #use printf: from http://stackoverflow.com/questions/8467424/echo-new-line-in-bash-prints-literal-n
+  printf "\n#Setup bash prompt\nsource ~.bashprompt" > ~/.bashrc
 fi
 
 # User post-install actions
