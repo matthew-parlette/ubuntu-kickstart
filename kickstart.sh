@@ -10,13 +10,13 @@ install_fonts=true
 install_bashprompt=true
 
 # Development Libraries
-dev="build-essential git ruby"
+dev="build-essential git ruby lamp-server"
 
 # IDE
 ide="geany"
 
 # Utilities
-util="keepassx mirage"
+util="keepassx mirage gimp vym geary"
 
 # Install software
 ##################
