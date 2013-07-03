@@ -22,7 +22,7 @@ util="keepassx mirage"
 ##################
 if $install_software ; then
   echo "Installing software..."
-  "sudo apt-get install -y $dev $ide $util"
+  sudo apt-get install -y $dev $ide $util > /dev/null
   echo "...ok"
 fi
 
